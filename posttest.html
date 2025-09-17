@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>顏色混合測驗(後測)</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <div style="text-align: center; padding: 20px;">
+    <h1>顏色混合測驗(後測)</h1>
+    
+    <div id="start-screen">
+      <input id="username" type="text" placeholder="請輸入受試者編號" style="padding: 10px; margin: 10px; font-size: 16px;" />
+      <br>
+      <button onclick="startQuiz()" style="padding: 10px 20px; margin: 10px; font-size: 16px;">開始測驗</button>
+    </div>
+
+    <div id="quiz-content" style="display: none;">
+      <div id="question-text" style="margin-bottom: 20px;"></div>
+      <div id="question-image" style="display: none;"></div>
+      <div id="options"></div>
+    </div>
+
+    <div id="end-screen" style="display:none;">
+      <h3>問卷完成，感謝您的作答！</h3>
+      <button onclick="downloadJSON()">下載作答結果</button>
+      <pre id="json-output" style="text-align:left; background:#f0f0f0; padding:1em;"></pre>
+    </div>
+  </div>
+
+  <script src="posttest.js"></script>
+</body>
+</html>
