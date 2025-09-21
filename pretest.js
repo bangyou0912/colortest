@@ -20,7 +20,7 @@ const colorMap = {
   "白": "#ffffff"
 };
 
-// 題目陣列：請貼上你要的題目
+// 題目陣列
 const practiceQuestions = [
   {
     q: "青 + 黃 → ?",
@@ -125,7 +125,58 @@ const realQuestions = [
       { colors: ["洋紅", "黃", "青"], value: "洋紅+黃+青" },
       { colors: ["青", "青", "黃"], value: "青 + 青 + 黃" },
       { colors: ["洋紅", "洋紅", "黃"], value: "洋紅 + 洋紅 + 黃" }
-    ]}
+    ]},
+
+  
+  { q: "藍 + 青 → ?", answer: ["藍","青"], correctAnswer:"青藍",
+    options: [{ value: "青藍" }, { value: "藍綠" }, { value: "紫" }] },
+  { q: "藍 + 洋紅 → ?", answer: ["藍","洋紅"], correctAnswer:"紫",
+    options: [{ value: "青藍" }, { value: "橙" }, { value: "紫" }] },
+  { q: "紅 + 洋紅 → ?", answer: ["紅","洋紅"], correctAnswer:"朱紅",
+    options: [{ value: "橙" }, { value: "朱紅" }, { value: "紫" }] },
+  { q: "紅 + 黃 → ?", answer: ["紅","黃"], correctAnswer:"橙",
+    options: [{ value: "朱紅" }, { value: "橙" }, { value: "紫" }] },
+  { q: "綠 + 黃 → ?", answer: ["綠","黃"], correctAnswer:"黃綠",
+    options: [{ value: "藍綠" }, { value: "黃綠" }, { value: "青藍" }] },
+  { q: "綠 + 青 → ?", answer: ["綠","青"], correctAnswer:"藍綠",
+    options: [{ value: "黃綠" }, { value: "藍綠" }, { value: "紫" }] },
+
+  { q: "這是什麼混色組成？", color: "青藍", answer: ["藍", "青"], correctAnswer:"藍+青",
+    options: [
+      { colors: ["藍", "青"], value: "藍+青" },
+      { colors: ["藍", "洋紅"], value: "藍+洋紅" },
+      { colors: ["綠", "青"], value: "綠+青" }
+    ]},
+  { q: "這是什麼混色組成？", color: "紫", answer: ["藍", "洋紅"], correctAnswer:"藍+洋紅",
+    options: [
+      { colors: ["藍", "青"], value: "藍+青" },
+      { colors: ["藍", "洋紅"], value: "藍+洋紅" },
+      { colors: ["紅", "青"], value: "紅+青" }
+    ]},
+  { q: "這是什麼混色組成？", color: "朱紅", answer: ["紅", "洋紅"], correctAnswer:"紅+洋紅",
+    options: [
+      { colors: ["紅", "黃"], value: "紅+黃" },
+      { colors: ["藍", "洋紅"], value: "藍+洋紅" },
+      { colors: ["紅", "洋紅"], value: "紅+洋紅" }
+    ]},
+  { q: "這是什麼混色組成？", color: "橙", answer: ["紅", "黃"], correctAnswer:"紅+黃",
+    options: [
+      { colors: ["紅", "黃"], value: "紅+黃" },
+      { colors: ["藍", "洋紅"], value: "藍+洋紅" },
+      { colors: ["紅", "洋紅"], value: "紅+洋紅" }
+    ]},
+  { q: "這是什麼混色組成？", color: "黃綠", answer: ["綠", "黃"], correctAnswer:"綠+黃",
+    options: [
+      { colors: ["綠", "黃"], value: "綠+黃" },
+      { colors: ["綠", "青"], value: "綠+青" },
+      { colors: ["藍", "黃"], value: "藍+黃" }
+    ]},
+  { q: "這是什麼混色組成？", color: "藍綠", answer: ["綠", "青"], correctAnswer:"綠+青",
+    options: [
+      { colors: ["綠", "黃"], value: "綠+黃" },
+      { colors: ["綠", "青"], value: "綠+青" },
+      { colors: ["藍", "黃"], value: "藍+黃" }
+    ]},
 ];
 
 let allQuestions = [];
@@ -133,7 +184,7 @@ let current = 0;
 let startTime = 0;
 let results = [];
 let username = "";
-let realQuestionIndices = []; // ☆ 補上這行，避免未宣告造成錯誤
+let realQuestionIndices = [];
 
 function startQuiz() {
   const usernameInput = document.getElementById("username");
